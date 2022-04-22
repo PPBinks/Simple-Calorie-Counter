@@ -26,25 +26,26 @@ def cal_in():
 #And the interger value with date and time are added to list of cals_logged_datetime.
     cals_logged_val.append(cal_val)
     cals_logged_datetime.append(full_log_entry)
+    return full_log_entry
 
 #Now, the running total of cals is calculated by summing the elements of the list
 #before the next iteration of the function runs. I could have also
 def running_total_cals():
-    run = 0
+    total_cals = 0
     for n in cals_logged_val:
-        run = run + n
-        total_cals = run
-
+        total_cals = total_cals + n
+    return total_cals
+        
 #Now we actually invoke the function, and then tell the computer to keep
 #running the function indefinitely, so the user can keep logging calories 
 #as much as they want.
 while True:
     cal_in()
     running_total_cals()
-    print(full_log_entry)
+    print(cal_in())
     print(cals_logged_val)
     print(cals_logged_datetime)
-    print(total_cals)
+    print(running_total_cals())
     
     
 
